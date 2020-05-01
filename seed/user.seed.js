@@ -1,6 +1,6 @@
 [{
   "id": 1,
-  "email": "lphan@shift3tech.com",
+  "email": "simbrar97@gmail.com",
   "username": "lphan",
   "password": "abc123",
   "super_admin": true,
