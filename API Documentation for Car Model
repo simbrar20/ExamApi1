@@ -1,5 +1,5 @@
 Description: Get cars from database
-[Endpoint: http://localhost:3002/api/v1/car
+[Endpoint: http://localhost:3002/api/v1/car/id/1
 Method: Put
 Params: id of user
 request payload:
