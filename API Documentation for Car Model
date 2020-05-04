@@ -1,0 +1,47 @@
+Description: Get cars from user id 
+[Endpoint: http://localhost:3002/api/v1/car/get
+Method: Post
+Params: id of user
+request payload:
+{
+	"get":["*"],
+	"where": {
+		"user_id": 1
+	}
+}
+Respose: 
+{
+    "data": [
+        {
+            "id": 2,
+            "make": "Nissan",
+            "model": "350Z",
+            "year": "2018",
+            "user_id": 1,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": null,
+            "created_at": "2020-05-01T07:28:01.204Z",
+            "updated_at": "2020-05-01T07:28:01.204Z",
+            "deleted_at": null
+        },
+        {
+            "id": 1,
+            "make": "Honda",
+            "model": "Accord",
+            "year": "2018",
+            "user_id": 1,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": "lphan",
+            "created_at": "2020-05-01T07:26:21.080Z",
+            "updated_at": "2020-05-04T02:45:18.143Z",
+            "deleted_at": null
+        }
+    ],
+    "statusCode": 200,
+    "message": "get success",
+    "totalRowCount": 4
+}
+
+    
