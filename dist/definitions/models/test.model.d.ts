@@ -4,5 +4,5 @@ export declare class Test {
     _model: any;
     constructor(norm: any);
     model: any;
-    testFunc: (model: any) => (req: Request<import("../../../../../../Users/admin/Desktop/ExamApi1/node_modules/@types/express-serve-static-core").ParamsDictionary, any, any, import("../../../../../../Users/admin/Desktop/ExamApi1/node_modules/@types/express-serve-static-core").Query>, res: Response<any>, next: NextFunction) => void;
+    testFunc: (model: any) => (req: Request<import("../../../../../../Users/admin/Desktop/ExamAPI1/node_modules/@types/express-serve-static-core").ParamsDictionary, any, any, import("../../../../../../Users/admin/Desktop/ExamAPI1/node_modules/@types/express-serve-static-core").Query>, res: Response<any>, next: NextFunction) => void;
 }
