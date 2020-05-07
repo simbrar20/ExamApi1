@@ -1,4 +1,4 @@
-import {Request, Response, NextFunction} from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 export class Car {
   _model: any;
@@ -8,6 +8,7 @@ export class Car {
       make: { type: String, maxlength: 24 },
       model: { type: String, maxlength: 24 },
       year: { type: String, maxlength: 24 },
+      color: { type: String, maxlength: 24 },
       mileage: { type: String, maxlength: 24 },
       user_id: {
         type: Number,
@@ -29,28 +30,69 @@ export class Car {
         method: 'POST',
         callback: this.getCarById,
         requireToken: true,
+      },
+      {
+        route: '/create-car',
+        method: 'POST',
+        callback: this.createCar,
+        requireToken: true,
+      },
+      {
+        route: '/update-car/id/:id',
+        method: 'PUT',
+        callback: this.updateCar,
+        requireToken: true,
+      },
+      {
+        route: '/delete/id/:id',
+        method: 'DELETE',
+        callback: this.deleteCar,
+        requireToken: true,
       }
     ]];
+  }
+  updateCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.update(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+
+  deleteCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.remove(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+
+  createCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.insert(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
   }
 
   getAllCars(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {
-        req.body = {
-          get: ['*']
+      req.body = {
+        get: ['*']
       }
       let carCtrl = model.controller;
       let resp = await carCtrl.get(req, null, null);
-      res.json({ message: 'from Success', resp });
+      res.json({ message: 'Success', resp });
     }
   }
 
   getCarById(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {
-        req.body = {
-          get: ['*'],
-          where: {
-            id: req.params.id
-          }
+      req.body = {
+        get: ['*'],
+        where: {
+          id: req.params.id
+        }
       }
       let carCtrl = model.controller;
       let resp = await carCtrl.get(req, null, null);
