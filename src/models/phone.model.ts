@@ -24,7 +24,6 @@ export class Phone {
       },
 
     }, 'A table to store user phone model',
-
     [
 
       {
@@ -45,7 +44,6 @@ export class Phone {
         callback: this.createPhone,
         requireToken: true,
       },
-
     ]
     ];
   }
