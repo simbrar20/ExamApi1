@@ -7,3 +7,4 @@ __export(require("./test.model"));
 __export(require("./exam.model"));
 __export(require("./car.model"));
 __export(require("./phone.model"));
+__export(require("./shoe.model"));
