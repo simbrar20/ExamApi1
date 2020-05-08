@@ -62,7 +62,7 @@ export class Shoe {
     getShoesById(model: any) {
 
         return async (req: Request, res: Response, next: NextFunction) => {
-
+            
             req.body = {
                 get: ["*"],
                 where: {

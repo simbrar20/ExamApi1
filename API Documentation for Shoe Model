@@ -1,6 +1,12 @@
-Description: Get all the clothes from the database
-Endpoint: http://localhost:3002/api/v1/shoe
-Method: GET
-Params: none
-Request Payload: none
+Description: Update a shoe record
+Endpoint: http://localhost:3002/api/v1/shoes/update-shoes/id/1
+Method: PUT
+Params: id of shoes
+Request Payload: 
+{
+	
+	"brand": "Nike",
+	"model": "Air Jordan",
+	"color": "Black"
+}
 Response:
