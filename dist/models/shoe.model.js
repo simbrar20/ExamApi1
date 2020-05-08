@@ -69,22 +69,22 @@ class Shoe {
                     id: req.params.id
                 }
             };
-            let ShoesCtrl = model.controller;
-            let resp = yield ShoesCtrl.get(req, null, null);
+            let shoesCtrl = model.controller;
+            let resp = yield shoesCtrl.get(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }
     createShoes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let ShoesCtrl = model.controller;
-            let resp = yield ShoesCtrl.insert(req, null, null);
+            let shoesCtrl = model.controller;
+            let resp = yield shoesCtrl.insert(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }
     updateShoes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let ShoesCtrl = model.controller;
-            let resp = yield ShoesCtrl.update(req, null, null);
+            let shoesCtrl = model.controller;
+            let resp = yield shoesCtrl.update(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

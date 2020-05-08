@@ -69,16 +69,16 @@ export class Shoe {
                     id: req.params.id
                 }
             }
-            let ShoesCtrl = model.controller;
-            let resp = await ShoesCtrl.get(req, null, null);
+            let shoesCtrl = model.controller;
+            let resp = await shoesCtrl.get(req, null, null);
             res.json({ message: 'Success', resp });
         }
     }
 
     createShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {
-            let ShoesCtrl = model.controller;
-            let resp = await ShoesCtrl.insert(req, null, null);
+            let shoesCtrl = model.controller;
+            let resp = await shoesCtrl.insert(req, null, null);
             res.json({ message: 'Success', resp });
         }
 
@@ -86,13 +86,13 @@ export class Shoe {
 
     updateShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {
-          let ShoesCtrl = model.controller;
-          let resp = await ShoesCtrl.update(req, null, null);
+          let shoesCtrl = model.controller;
+          let resp = await shoesCtrl.update(req, null, null);
           res.json({ message: 'Success', resp });
         }
       }
 
-    set model(model: any) {
+    set model (model: any) {
         this._model = model;
     }
     get model() {
