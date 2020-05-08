@@ -1,0 +1,6 @@
+Description: Get all the clothes from the database
+Endpoint: http://localhost:3002/api/v1/shoe
+Method: GET
+Params: none
+Request Payload: none
+Response:
