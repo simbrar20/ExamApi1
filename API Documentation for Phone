@@ -1,5 +1,5 @@
 Description: Get cars from user id 
-Endpoint: http://localhost:3002/api/v1/phone/create-phone
+Endpoint: http://localhost:3002/api/v1/Phone/create-phone
 Method: POST
 Params: none
 request payload: 

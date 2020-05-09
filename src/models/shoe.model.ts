@@ -43,6 +43,12 @@ export class Shoe {
                 callback: this.updateShoes,
                 requireToken: true,
               },
+              {
+                route: '/delete/id/:id',
+                method: 'DELETE',
+                callback: this.deleteShoe,
+                requireToken: true,
+              }
         ]
         ];
     }
@@ -88,6 +94,13 @@ export class Shoe {
         return async (req: Request, res: Response, next: NextFunction) => {
           let shoesCtrl = model.controller;
           let resp = await shoesCtrl.update(req, null, null);
+          res.json({ message: 'Success', resp });
+        }
+      }
+    deleteShoe(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          let shoeCtrl = model.controller;
+          let resp = await shoeCtrl.remove(req, null, null);
           res.json({ message: 'Success', resp });
         }
       }

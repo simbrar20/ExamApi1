@@ -51,6 +51,12 @@ export class Phone {
         callback: this.updatePhone,
         requireToken: true,
       },
+      {
+        route: '/delete-phone/id/:id',
+        method: 'DELETE',
+        callback: this.deletePhone,
+        requireToken: true,
+      },
     ]
     ];
   }
@@ -89,6 +95,13 @@ export class Phone {
     return async (req: Request, res: Response, next: NextFunction) => {
       let phoneCtrl = model.controller;
       let resp = await phoneCtrl.update(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+  deletePhone(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let phoneCtrl = model.controller;
+      let resp = await phoneCtrl.remove(req, null, null);
       res.json({ message: 'Success', resp });
     }
   }
