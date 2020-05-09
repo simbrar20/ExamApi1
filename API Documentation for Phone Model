@@ -1,5 +1,5 @@
 Description: Get cars from user id 
-Endpoint: http://localhost:3002/api/v1/phone/create-phone
+Endpoint: http://localhost:3002/api/v1/Phone/create-phone
 Method: POST
 Params: none
 request payload: 
@@ -31,7 +31,7 @@ Respose:
 }
 
 Description: Get cars from user id 
-Endpoint: http://localhost:3002/api/v1/phone/get-all-phones
+Endpoint: http://localhost:3002/api/v1/Phone/get-all-phones
 Method: GET
 Params: none
 request payload: none
@@ -72,7 +72,7 @@ Response:
 }
 
 Description: Get cars from user id 
-Endpoint: http://localhost:3002/api/v1/phone/get-phone-by-id/2
+Endpoint: http://localhost:3002/api/v1/Phone/get-phone-by-id/2
 Method: GET
 Params: none
 request payload: none
