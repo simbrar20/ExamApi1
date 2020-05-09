@@ -45,7 +45,12 @@ export class Phone {
         callback: this.createPhone,
         requireToken: true,
       },
-
+      {
+        route: '/update-phone/id/:id',
+        method: 'PUT',
+        callback: this.updatePhone,
+        requireToken: true,
+      },
     ]
     ];
   }
@@ -77,6 +82,13 @@ export class Phone {
     return async (req: Request, res: Response, next: NextFunction) => {
       let phoneCtrl = model.controller;
       let resp = await phoneCtrl.insert(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+  updatePhone(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let phoneCtrl = model.controller;
+      let resp = await phoneCtrl.update(req, null, null);
       res.json({ message: 'Success', resp });
     }
   }

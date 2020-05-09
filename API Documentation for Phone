@@ -1,0 +1,131 @@
+Description: Get cars from user id 
+Endpoint: http://localhost:3002/api/v1/phone/create-phone
+Method: POST
+Params: none
+request payload: 
+{
+	
+	"brand": "iPhone",
+	"model": "6",
+	"color": "silver"
+}
+Respose: 
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "id": 1,
+            "brand": "iPhone",
+            "model": "6",
+            "color": "silver",
+            "user_id": null,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": null,
+            "created_at": "2020-05-07T03:44:36.146Z",
+            "updated_at": "2020-05-07T03:44:36.146Z",
+            "deleted_at": null
+        },
+        "statusCode": 200
+    }
+}
+
+Description: Get cars from user id 
+Endpoint: http://localhost:3002/api/v1/phone/get-all-phones
+Method: GET
+Params: none
+request payload: none
+Response: 
+{
+    "message": "Success",
+    "resp": {
+        "data": [
+            {
+                "id": 1,
+                "brand": "iPhone",
+                "model": "6",
+                "color": "silver",
+                "user_id": null,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2020-05-07T03:44:36.146Z",
+                "updated_at": "2020-05-07T03:44:36.146Z",
+                "deleted_at": null
+            },
+            {
+                "id": 2,
+                "brand": "iPhone",
+                "model": "X",
+                "color": "silver",
+                "user_id": null,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2020-05-07T03:48:17.806Z",
+                "updated_at": "2020-05-07T03:48:17.806Z",
+                "deleted_at": null
+            }
+        ],
+        "statusCode": 200
+    }
+}
+
+Description: Get cars from user id 
+Endpoint: http://localhost:3002/api/v1/phone/get-phone-by-id/2
+Method: GET
+Params: none
+request payload: none
+Response: 
+{
+    "message": "Success",
+    "resp": {
+        "data": [
+            {
+                "id": 2,
+                "brand": "iPhone",
+                "model": "X",
+                "color": "silver",
+                "user_id": null,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2020-05-07T03:48:17.806Z",
+                "updated_at": "2020-05-07T03:48:17.806Z",
+                "deleted_at": null
+            }
+        ],
+        "statusCode": 200
+    }
+}
+------------------------------------------------------------------
+Description: Get all shoes from database
+Endpoint: http://localhost:3002/api/v1/phone/update-phone/id/1
+Method: PUT
+Params: none
+Request Payload:
+{
+	"brand": "Android",
+	"model": "Galaxy S9",
+	"color": "Black"
+}
+Response: 
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "id": 1,
+            "brand": "Android",
+            "model": "Galaxy S9",
+            "color": "Black",
+            "user_id": null,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": "lphan",
+            "created_at": "2020-05-07T03:44:36.146Z",
+            "updated_at": "2020-05-09T01:26:16.322Z",
+            "deleted_at": null
+        },
+        "statusCode": 200
+    }
+}
