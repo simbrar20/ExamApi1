@@ -1,5 +1,5 @@
-Description: Get cars from user id 
-[Endpoint: http://localhost:3002/api/v1/car/get-all-cars
+Description: Get all cars from database
+Endpoint: http://localhost:3002/api/v1/car/get-all-cars
 Method: GET
 Params: id of user
 request payload: none
@@ -120,7 +120,7 @@ Respose:
 ------------------------------------------------------------------
 
 Description: Get cars from user id 
-[Endpoint: http://localhost:3002/api/v1/car/get-car-by-id/1
+Endpoint: http://localhost:3002/api/v1/car/get-car-by-id/1
 Method: GET
 Params: id of user
 request payload: none
@@ -148,4 +148,37 @@ Respose:
         "statusCode": 200
     }
 }
-    
+Description: Create new car record
+Endpoint: http://localhost:3002/api/v1/Car/create-car
+Method: Post
+Params: none
+request payload: 
+{
+	
+	"make": "Honda",
+	"model": "Civic",
+	"year": "2017",
+	"color": "Green"
+}
+Respose: 
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "id": 10,
+            "make": "Honda",
+            "model": "Civic",
+            "year": "2017",
+            "user_id": null,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": null,
+            "created_at": "2020-05-09T23:43:42.599Z",
+            "updated_at": "2020-05-09T23:43:42.599Z",
+            "deleted_at": null,
+            "mileage": null,
+            "color": null
+        },
+        "statusCode": 200
+    }
+}

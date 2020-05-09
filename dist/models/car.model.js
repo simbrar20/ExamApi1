@@ -26,6 +26,12 @@ class Car {
             }, 'A table to store user car model',
             [
                 {
+                    route: '/create-car',
+                    method: 'POST',
+                    callback: this.createCar,
+                    requireToken: true,
+                },
+                {
                     route: '/get-all-cars',
                     method: 'GET',
                     callback: this.getAllCars,
@@ -59,6 +65,13 @@ class Car {
             };
             let carCtrl = model.controller;
             let resp = yield carCtrl.get(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
+    }
+    createCar(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let carCtrl = model.controller;
+            let resp = yield carCtrl.insert(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

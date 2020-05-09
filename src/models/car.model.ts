@@ -19,6 +19,12 @@ export class Car {
     }, 'A table to store user car model',
     [
       {
+        route: '/create-car',
+        method: 'POST',
+        callback: this.createCar,
+        requireToken: true,
+      },
+      {
         route: '/get-all-cars',
         method: 'GET',
         callback: this.getAllCars,
@@ -60,11 +66,19 @@ export class Car {
       res.json({ message: 'Success', resp });
     }
   }
+  
+  createCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.insert(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
 
   set model(model: any) {
     this._model = model;
   }
-
+  
   get model() {
     return this._model;
   }
