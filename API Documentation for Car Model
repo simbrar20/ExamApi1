@@ -1,4 +1,4 @@
-Description: Get cars from database
+Description: update car by id
 Endpoint: http://localhost:3002/api/v1/Car/update-car/id/7
 Method: Put
 Params: id of user
@@ -144,7 +144,7 @@ Response:
         "color": "yellow"
     }
 ]
-Description: Get cars from database
+Description: Delete car from database by id
 Endpoint: http://localhost:3002/api/v1/Car/delete/id/6
 Method: DELETE
 Params: delete id and car of user
@@ -167,7 +167,7 @@ Response:
     }
 }
 -----------------------------------------------------------------
-Description: Get cars from database
+Description: Create new car record
 Endpoint: http://localhost:3002/api/v1/Car/create-car
 Method: POST
 Params: New Car

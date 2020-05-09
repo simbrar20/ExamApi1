@@ -48,6 +48,12 @@ class Shoe {
                     callback: this.updateShoes,
                     requireToken: true,
                 },
+                {
+                    route: '/delete/id/:id',
+                    method: 'DELETE',
+                    callback: this.deleteShoe,
+                    requireToken: true,
+                }
             ]
         ];
     }
@@ -85,6 +91,13 @@ class Shoe {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             let shoesCtrl = model.controller;
             let resp = yield shoesCtrl.update(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
+    }
+    deleteShoe(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let shoeCtrl = model.controller;
+            let resp = yield shoeCtrl.remove(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

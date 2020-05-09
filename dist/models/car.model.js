@@ -28,13 +28,13 @@ class Car {
             [
                 {
                     route: '/get-all-cars',
-                    method: 'POST',
+                    method: 'GET',
                     callback: this.getAllCars,
                     requireToken: true,
                 },
                 {
                     route: '/get-car-by-id/:id',
-                    method: 'POST',
+                    method: 'GET',
                     callback: this.getCarById,
                     requireToken: true,
                 },
